@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ProjMan23.props" />
-</Project>
