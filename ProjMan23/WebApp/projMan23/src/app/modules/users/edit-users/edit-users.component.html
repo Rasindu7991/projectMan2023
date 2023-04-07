@@ -1,0 +1,47 @@
+<div class="container my-5">
+    <h1 class="mb-3"> Edit User</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="editUser()">
+                <div class="mb-3">
+                   <label for="name" class="form-label">Name</label>
+                   <input type="text" class="form-control" id="idname" aria-describedby="nameHelp"
+                    name="name" [(ngModel)]="userDetails.name">
+                 </div>
+                 <div class="mb-3">
+                   <label for="exampleInputEmail1" class="form-label">Email address</label>
+                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   name="email" [(ngModel)]="userDetails.email">
+                 </div>
+                 <div class="mb-3">
+                   <label for="contact" class="form-label">Contact No</label>
+                   <input type="text" class="form-control" id="contactId" aria-describedby="contactHelp"
+                   name="contactNo" [(ngModel)]="userDetails.contactNo">
+                 </div>
+                 <!-- <div class="mb-3">
+                   <label for="exampleInputPassword1" class="form-label">Password</label>
+                   <input type="password" class="form-control" id="exampleInputPassword1">
+                 </div> -->
+                 <div class="mb-3">
+                   <label for="department" class="form-label">Department</label>
+                   <select id="departmentId" class="form-select" name="department" [(ngModel)]="userDetails.department">
+                     <option value=1>IT</option>
+                     <option value=2>Finance</option>
+                     <option value=3>SE</option>
+                   </select>
+                 </div>
+                 <div class="mb-3">
+                   <label for="unit" class="form-label">Unit</label>
+                   <select id="unitId" class="form-select" name="unit" [(ngModel)]="userDetails.unit">
+                     <option value=1>Unit 1</option>
+                     <option value=2>Unit 2</option>
+                     <option value=3>Unit 3</option>
+                   </select>
+                 </div>
+                 <button type="submit" class="btn btn-primary">Edit</button>
+                 <button type="button" class="btn btn-danger" (click)="deleteUser(userDetails.id)">Delete</button>
+           </form>
+        </div>
+    </div>
+</div>

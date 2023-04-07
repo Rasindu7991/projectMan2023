@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="mb-3">Users</h1>
+
+    <table class="table" *ngIf="users && users.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact No</th>
+            <th scope="col">Department</th>
+            <th scope="col">Unit</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.contactNo}}</td>
+            <td>
+              <span *ngIf="user.department == 1">IT</span>
+              <span *ngIf="user.department == 2">FINANCE</span>
+              <span *ngIf="user.department == 3">SE</span>
+            </td> 
+            <td>
+              <span *ngIf="user.unit == 1">Unit 1</span>
+              <span *ngIf="user.unit == 2">Unit 2</span>
+              <span *ngIf="user.unit == 3">Unit 3</span>
+            </td> 
+            <td><a [routerLink]="['/users','edit', user.id]">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p *ngIf="!users || users.length <= 0">No Users Found</p>
+</div>
